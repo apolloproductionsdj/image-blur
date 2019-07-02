@@ -1,4 +1,5 @@
 class Image
+  attr_accessor :image_data
 
   def initialize(image_data)
     @image_data = image_data
@@ -42,18 +43,17 @@ class Image
         # x is the name of the row in the array. We go down 1 since we are adding 1 to it
         @image_data[x - 1][y] = 1 if x - 1 >= 0
         # x is the name of the row in the array. We go up 1 since we are subtracting 1 to it
+        return Image.new(@image_data)
       end
     end
 
 end
 
-image = Image.new([
-  [0, 0, 0, 0],
-  [0, 0, 0, 0],
-  [0, 0, 0, 0],
-  [0, 1, 0, 0],
-  [0, 0, 0, 0],
-  [0, 0, 0, 0],
-])
-image.blur_coords!
-image.output_image
+#   image = Image.new([
+#     [0, 0, 0, 0],
+#     [0, 1, 0, 0],
+#     [0, 0, 0, 0],
+#     [0, 1, 0, 0],
+#   ])
+# image.blur_coords!
+# image.output_image

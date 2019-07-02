@@ -20,7 +20,7 @@ RSpec.describe Image, type: :model do
         [0, 0, 0, 0],
       ]
      image = Image.new(input)
-     expect(image.blur_coords!.data).to eq expected
+     expect(image.blur_coords!.image_data).to eq expected
    end
  end 
 end 
